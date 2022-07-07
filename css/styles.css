@@ -459,11 +459,14 @@ header {
     pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 
     width: 528px;
     height: 581px;
@@ -471,6 +474,9 @@ header {
     background-color: var(--title-text-color);
 
     border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--timing-function);
 }
 
 .close {
