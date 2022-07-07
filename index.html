@@ -36,11 +36,19 @@
     <main>
         <section class="title">
             <h1 class="title-hero">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="button-order">Заказать услугу</button>
+            <button type="button" class="button-order" data-modal-open>Заказать услугу</button>
+            <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                    <div class="close" data-modal-close>
+                        <svg class="icon-close" width="30" height="30">
+                            <use href="./images/symbol-defs.svg#icon-close"></use>
+                    </svg></div>
+                </div>
+            </div>
         </section>
         <section class="section">
             <div class="container">
-                <h2 class="hidden" >Наши качества</h2>
+                <h2 class="hidden">Наши качества</h2>
                 <ul class="work-quality">
                     <li class="item">
                         <div class="icon-img">
@@ -87,9 +95,17 @@
             <div class="container che">
                 <h2 class="heading">Чем мы занимаемся</h2>
                 <ul class="works">
-                    <li class="item"> <img src="./images/img1.jpg" alt="Написание кода" width="370" height="294"> </li>
-                    <li class="item"> <img src="./images/img2.jpg" alt="Выбор дизайна" width="370" height="294"> </li>
-                    <li class="item"> <img src="./images/img3.jpg" alt="Колористика" width="370" height="294"> </li>
+                    <li class="item"> <img src="./images/img1.jpg" alt="Написание кода" width="370" height="294"> 
+                    <div class="signature">
+                        <h3 class="signature-do">Десктопные приложения</h3>
+                    </div>
+                    </li>
+                    <li class="item"> <img src="./images/img2.jpg" alt="Выбор дизайна" width="370" height="294"> 
+                    <div class="signature"><h3 class="signature-do">Мобильные приложения</h3></div>
+                    </li>
+                    <li class="item"> <img src="./images/img3.jpg" alt="Колористика" width="370" height="294"> 
+                    <div class="signature"><h3 class="signature-do">Дизайнерские решения</h3></div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -327,5 +343,6 @@
             </section>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

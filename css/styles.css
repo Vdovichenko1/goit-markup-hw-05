@@ -139,6 +139,13 @@ header {
     color: var(--nav-log-text-color);
 }
 
+.link.current::after {
+    position: relative;
+    background-color: #2196F3;
+    border-radius: 2px;
+    bottom: 0;
+}
+
 /* CONTACTS */
 
 .site-cont {
@@ -176,7 +183,7 @@ header {
 
 .icon {
     margin-right: 10px;
-    fill: var(--paragraph-text-color);
+    fill: #757575;
 }
 
 /* Title */
@@ -218,7 +225,13 @@ header {
     text-transform: uppercase;
 }
 
-/* Section */
+/* Section doing */
+
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .section {
     padding-top: 94px;
@@ -230,21 +243,35 @@ header {
     padding-bottom: 94px;
 }
 
+/* Position absolut */
 
-.works {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.works > .item {
+    position: relative; 
 }
 
-/* .works .item {
-    margin-right: 30px;
-    margin-left: 0;
+.signature {
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    bottom: 0;
+
+    background-color: rgba(47, 48, 58, 0.8);
 }
 
-.works .item:nth-child(3n) {
-    margin-right: 0;
-} */
+.signature-do {
+    padding: 27px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--title-text-color);
+}
+
+/* Team */
+
+
 
 .quality {
     color: var(--paragraph-text-color);
@@ -340,14 +367,67 @@ header {
 }
 
 
-/* Button */
+/* Modal window */
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);;
+    opacity: 1;
+    visibility: visible;
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 528px;
+    height: 581px;
+    
+    background-color: var(--title-text-color);
+
+    border-radius: 4px;
+}
+
+.close {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.icon-close {
+    display: block;
+    position: absolute;
+    margin: auto;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/* Button */
 
 
 .button-order {
     border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border: #2196F3;;
+    border: #2196F3;
     padding: 10px 32px;
     margin-left: auto;
     margin-right: auto;
