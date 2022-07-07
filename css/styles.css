@@ -408,7 +408,35 @@ header {
 
 /* Animation work */
 
+.product-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 
+    background-color: rgba(33, 150, 243, 0.9);
+
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--title-text-color);
+
+    padding: 63px 24px;
+
+    transform: translateY(100%);
+
+    transition: transform 250ms var(--timing-function);
+}
+
+.product {
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-element:hover .product-text {
+    transform: translateY(0);
+}
 
 /* Modal window */
 
