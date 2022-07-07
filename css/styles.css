@@ -40,6 +40,7 @@ html {
     --logo-color: #000000;
     --network-icon-color: #AFB1B8;
     --foot-icon-color: rgba(255, 255, 255, 0.1);
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -99,7 +100,7 @@ span {
 
 .main-nav {
     display: flex;
-    align-items: center;  
+    align-items: center; 
 }
 
 header {
@@ -118,6 +119,7 @@ header {
 }
 
 .site-nav .link {
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -128,6 +130,10 @@ header {
     font-weight: 500;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .site-nav .link:hover,
@@ -139,11 +145,31 @@ header {
     color: var(--nav-log-text-color);
 }
 
-.link.current::after {
-    position: relative;
+.site-nav .link.current::after {
+    opacity: 1;
+}
+
+.site-nav .link::after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
     background-color: #2196F3;
     border-radius: 2px;
-    bottom: 0;
+    opacity: 0;
+    transition: opacity 250ms var(--timing-function);
+    bottom: -2px;
+
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
+}
+
+.site-nav .link:hover::after,
+.site-nav .link:focus::after {
+    opacity: 1;
 }
 
 /* CONTACTS */
@@ -169,11 +195,21 @@ header {
     padding-bottom: 32px;
     display: flex;
     align-items: center;
+
+    transition-property: color fill;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .site-cont .link:hover,
 .site-cont .link:focus {
     color: var(--nav-log-text-color);
+}
+
+.site-cont .link .icon {
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .site-cont .link:hover .icon,
@@ -341,6 +377,10 @@ header {
 
     margin-right: 30px;
     margin-bottom: 30px;
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .flex-element:hover,
@@ -366,6 +406,9 @@ header {
     margin-bottom: 0;
 }
 
+/* Animation work */
+
+
 
 /* Modal window */
 
@@ -378,6 +421,8 @@ header {
     background: rgba(0, 0, 0, 0.2);;
     opacity: 1;
     visibility: visible;
+
+    transition: 250ms var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -473,6 +518,10 @@ header {
     border-radius: 4px;
     border: #F5F4FA;
     padding: 6px 22px;
+
+    transition-property: color background-color box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 
@@ -553,6 +602,10 @@ header {
     justify-content: center;
     align-items: center;
     fill: var(--network-icon-color);
+
+    transition-property: fill background-color border-radius;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .inst:hover,
@@ -603,6 +656,10 @@ header {
     justify-content: center;
     align-items: center;
     fill: #afb1b8;
+
+    transition-property: fill border;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .client-a:hover,
@@ -633,6 +690,9 @@ header {
 .site-ft .link {
     color: var(--paragraph-text-color);
     text-decoration: none;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .site-ft .link:hover,
@@ -709,6 +769,10 @@ header {
     align-items: center;
     background-color: var(--foot-icon-color);
     fill: var(--title-text-color);
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .link-foot:hover,
